@@ -1,0 +1,44 @@
+* {
+
+    margin: 0px;
+    padding: 0px;
+}
+main {
+    display: flex;
+
+
+}
+#map {
+    height: 100vh;
+    width: 100%;
+}
+aside {
+    position: relative;
+}
+.w-50 {
+    width: 50%;
+}
+.center {
+
+    text-align: center;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 70px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #cccccc;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.font-sans-serif{
+    font-family: sans-serif;
+
+}
+.bg-blue {
+    background-color: rgb(7, 7, 36);
+}
