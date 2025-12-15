@@ -1,33 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GeoTrakr</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <aside class="bg-blue w-50 txt-white">
-            <h1 class="center font-sans-serif">GeoTrakr 📍</h1>
+      <aside class="bg-blue w-50 txt-white">
+        <h1 class="center font-sans-serif">GeoTrakr 📍</h1>
+        <div class="f-container bg-grey">
+          <h2 class="text-white">Ajouter une activité</h2>
 
-            <footer class="footer">
-                <p>groupe 3 </p>
-                <p>Orange Digital Center</p>
-            </footer>
-        </aside>
+          <form id="form">
+            <label for="type" class="text-white">Type :</label>
+            <select id="type" name="type" class="bg-greyish" required>
+              <option value="">--Sélectionnez--</option>
+              <option value="course">Course</option>
+              <option value="velo">Vélo</option>
+            </select>
 
-        <div id="map" class="w-auto">
+            <label for="duree" class="text-white">Durée (min) :</label>
+            <input
+              type="number"
+              id="duree"
+              name="duree"
+              class="bg-greyish"
+              required
+            />
 
+            <label for="cadence" id="cadenceLabel" class="hidden text-white"
+              >Cadence (SPM) :</label
+            >
+            <input
+              type="number"
+              id="cadence"
+              name="cadence"
+              class="hidden bg-greyish"
+            />
+
+            <label for="denivele" id="deniveleLabel" class="hidden text-white"
+              >Dénivelé (m) :</label
+            >
+            <input
+              type="number"
+              id="denivele"
+              name="denivele"
+              class="hidden bg-greyish"
+            />
+
+            <button type="submit" class="bg-greyish">Ajouter</button>
+          </form>
         </div>
-    </main>
-</body>
+        <footer class="footer">
+          <p>groupe 3</p>
+          <p>Orange Digital Center</p>
+        </footer>
+      </aside>
 
+      <div id="map" class="w-auto"></div>
+    </main>
+  </body>
 </html>
