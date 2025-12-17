@@ -97,3 +97,47 @@ button {
 button:hover {
     background-color: #6d6d6d;
 }
+#historique {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#historique li {
+    display: flex;
+    background-color: #1b1d2a;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+#historique li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    border-radius: 10px 0 0 8px;
+    background-color: #ff4081; 
+}
+
+#historique li:nth-child(odd)::before {
+    background-color: #00bfff; 
+}
+
+#historique li strong {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+#historique li small {
+    display: block;
+    font-size: 0.8em;
+    color: #aaa;
+    margin-top: 5px;
+}
