@@ -1,56 +1,65 @@
-const inputType = document.getElementById("type");
+// =============================
+// 1. MAP INITIALIZATION
+// =============================
+const map = L.map("map").setView([34.020882, -6.841650], 13); // Rabat coords
 
+L.tileLayer(
+  "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+  {
+    attribution: "&copy; OpenStreetMap & CARTO"
+  }
+).addTo(map);
+
+
+// =============================
+// 2. DOM ELEMENTS
+// =============================
+const inputType = document.getElementById("type");
 const cadenceInput = document.getElementById("cadence");
 const cadenceLabel = document.getElementById("cadenceLabel");
-
 const deniveleInput = document.getElementById("denivele");
 const deniveleLabel = document.getElementById("deniveleLabel");
 
+const form = document.getElementById("form");
+const historique = document.getElementById("historique");
+const typeInput = document.getElementById("type");
+const dureeInput = document.getElementById("duree");
+
+
+// =============================
+// 3. FIELD VISIBILITY LOGIC
+// =============================
 function changeFields() {
   if (inputType.value === "course") {
-    // Show cadence
     cadenceInput.classList.remove("hidden");
     cadenceLabel.classList.remove("hidden");
-    // Hide elevation
     deniveleInput.classList.add("hidden");
     deniveleLabel.classList.add("hidden");
-  } 
+  }
   else if (inputType.value === "velo") {
-    // Show elevation
     deniveleInput.classList.remove("hidden");
     deniveleLabel.classList.remove("hidden");
-    // Hide cadence
     cadenceInput.classList.add("hidden");
     cadenceLabel.classList.add("hidden");
   }
   else {
-    // Hide all
     cadenceInput.classList.add("hidden");
     cadenceLabel.classList.add("hidden");
     deniveleInput.classList.add("hidden");
     deniveleLabel.classList.add("hidden");
   }
 }
+
 // Initialize state on page load
 changeFields();
+
 // Listen for changes
 inputType.addEventListener("change", changeFields);
 
 
-
-
-// -----------------------------
-// Select DOM elements
-// -----------------------------
-const form = document.getElementById("form");
-const historique = document.getElementById("historique");
-
-const typeInput = document.getElementById("type");
-const dureeInput = document.getElementById("duree");
-
-// -----------------------------
-// Handle form submission
-// -----------------------------
+// =============================
+// 4. FORM SUBMISSION LOGIC
+// =============================
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -79,6 +88,10 @@ form.addEventListener("submit", function (e) {
   form.reset();
 });
 
+
+// =============================
+// 5. ADD ACTIVITY TO LIST
+// =============================
 function ajouterActivite(activite) {
   const li = document.createElement("li");
 
