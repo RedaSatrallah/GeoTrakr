@@ -45,9 +45,13 @@ aside {
 .txt-white{
     color: white;
 }
-form { 
-    width: 100%;
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
+
 
 label { 
     display: block;
@@ -140,4 +144,8 @@ button:hover {
     font-size: 0.8em;
     color: #aaa;
     margin-top: 5px;
+}
+#map {
+  height: 100vh;
+  width: 100vw;
 }
