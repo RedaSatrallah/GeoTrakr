@@ -11,17 +11,14 @@
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-
   <main>
-
     <!--  SIDEBAR / FORM-->
     <aside class="bg-blue w-50 txt-white">
       <h1 class="center font-sans-serif">GeoTrakr 📍</h1>
 
-      <!--  Activity Form  -->
-      <div class="f-container bg-grey">
+      <!--  Activity Form - Initially Hidden -->
+      <div class="f-container bg-grey hidden">
         <h2 class="text-white">Ajouter une activité</h2>
 
         <form id="form">
@@ -38,6 +35,7 @@
           <input type="number" id="duree" name="duree" class="bg-greyish" required />
           <label for="distance" class="text-white">distance (Km) :</label>
           <input type="number" id="distance" name="distance" class="bg-greyish" required />
+          
           <!-- Cadence (Course Only) -->
           <label for="cadence" id="cadenceLabel" class="hidden text-white">Cadence (SPM) :</label>
           <input type="number" id="cadence" name="cadence" class="hidden bg-greyish" />
@@ -51,7 +49,7 @@
         </form>
       </div>
 
-      <!-- ===== Activity History ===== -->
+      <!-- ===== Activity History - Scrollable ===== -->
       <div class="Activités">
         <h2 class="text-white">Activités</h2>
         <ul id="historique"></ul>
@@ -64,16 +62,10 @@
       </footer>
     </aside>
 
-
-    <div id="map" class="w-auto">
-
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <div id="map" class="w-auto"></div>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="script.js"></script>
-    </div>
-
   </main>
 </body>
-
 </html>
